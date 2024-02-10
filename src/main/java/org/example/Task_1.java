@@ -10,7 +10,7 @@ calculateAvg(15,10,12);
         }
 
     public static void calculateAvg(int x, int z, int y) {
-        int result = (x + z + y) / 2;
+        int result = (x + z + y) / 3;
         System.out.println(result);
 
 
