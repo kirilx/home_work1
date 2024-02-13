@@ -15,7 +15,6 @@ public class FourValues {
                 } else {
                     if (monthlyIncome <= 2000 && amount >= 50000) {
                         System.out.println("Съжаляваме, но максимума за такъв доход е 20000 лева.");
-                    }else{
                     } if (monthlyIncome >= 5000 && amount <= 1000000) {
                         System.out.println("С такъв доход можем да ви предложим 100 000 лева");
                     } else {
