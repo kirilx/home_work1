@@ -12,22 +12,22 @@ public class FourValues {
             if (amount < 1000) {
                 if (months > 12) {
                     System.out.println("Не можете да изтеглите сума под 1000 лева за период по-дълъг от 12 месеца");
-                } else {
-                    if (monthlyIncome <= 2000 && amount >= 50000) {
-                        System.out.println("Съжаляваме, но максимума за такъв доход е 20000 лева.");
-                    } if (monthlyIncome >= 5000 && amount <= 1000000) {
-                        System.out.println("С такъв доход можем да ви предложим 100 000 лева");
-                    } else {
-                        double monthlyPayment = amount / months;
-                        System.out.println("Месечна вноска е равна на " + monthlyPayment);
-                    }
                 }
             } else {
-                double interestRate = getInterestRate(amount);
-                double totalAmount = amount + (amount * interestRate * months / 12);
-                double monthlyPayment = totalAmount / months;
-                System.out.printf("Месечна вноска за сума от %d лева за %d месеца с лихва %.2f%% %.2f лева.%n",
-                        amount, months, interestRate * 100, monthlyPayment);
+                if (monthlyIncome >= 2000 && amount >= 50000) {
+                    double monthlyPayment = amount / months;
+                    System.out.println("Месечна вноска е равна на " + monthlyPayment);
+                } else if (monthlyIncome <= 2000 && amount >= 50000) {
+                    System.out.println("Съжаляваме, но максимума за такъв доход е 20000 лева");
+                }else if (monthlyIncome >=5000 && amount <= 100000){
+                    System.out.println("С такъв доход можем да ви предложим 100 000");
+                } else {
+                    double interestRate = getInterestRate(amount);
+                    double totalAmount = amount + (amount * interestRate * months / 12);
+                    double monthlyPayment = totalAmount / months;
+                    System.out.printf("Месечна вноска за сума от %d лева за %d месеца с лихва %.2f%% %.2f лева.%n",
+                            amount, months, interestRate * 100, monthlyPayment);
+                }
             }
         }
     }
